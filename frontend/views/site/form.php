@@ -1,0 +1,52 @@
+<?php
+
+use yii\bootstrap5\Html;
+use yii\bootstrap5\ActiveForm;
+use frontend\models\Category;
+use frontend\models\Country;
+
+ 
+/** @var yii\web\View $this */
+/** @var frontend\models\Posters $model */
+/** @var ActiveForm $form */ 
+$this->title = "E'lon qo'shish"; 
+?>
+<div class="site-form">
+    <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
+    <div class="row">
+        <div class="col-lg-6">
+        <?= $form->field($model, 'title') ?>
+        </div>
+        <div class="col-lg-6">
+        <?= $form->field($model, 'price') ?>
+        </div>
+        <?= $form->field($model, 'image')->fileInput() ?>
+        <div class="col-lg-6">
+            <?=$form->field($model, 'category')->dropdownList(
+                Category::find()
+                    ->select(['category_name', 'id'])
+                    ->indexBy('id')
+                    ->column(),
+                ['prompt'=>'Kategoriyani tanlang']
+            )?>
+        </div>
+        <div class="col-lg-6">
+            <?=$form->field($model, 'address')->dropdownList(
+                Country::find()
+                    ->select(['c_name', 'id'])
+                    ->indexBy('id')
+                    ->column(),
+                ['prompt'=>'Hudidni tanglang']
+            )?>
+        </div>
+    </div>
+
+
+        <?= $form->field($model, 'description')->textarea(['rows' => '10']) ?>
+    
+        <div class="form-group">
+            <?= Html::submitButton('Kiritish', ['class' => 'btn btn-primary', 'id' => 'btn_form']) ?>
+        </div>
+    <?php ActiveForm::end(); ?>
+
+</div><!-- site-form -->
