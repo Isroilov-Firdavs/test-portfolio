@@ -10,7 +10,14 @@ use yii\helpers\Html;
         <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="../photos/banner.jpg" alt="Banner" /></div>
         <div class="col-lg-5">
             <h1 class="font-weight-light">O'z e'loningizni joylashtiring</h1>
-            <h1 class="font-weight-light">O'z e'loningizni joylashtiring</h1>
+            <?php
+// Return current date from the remote server
+
+
+date_default_timezone_set("Asia/Tashkent");
+// echo date('d-m-y H:m');
+echo date("Y-m-d H:i:s");
+?>
             <p>Bu sayt orqali siz o'z e'lonlaringizni bepulga joylashtirib borishingiz
             mumkin bo'ladi. Istalgan kategoriyangizni tanlang va o'zingiz xohlagan
             e'loningizni joylashtiring</p>

@@ -101,11 +101,13 @@ class SiteController extends Controller
     {
         $model = new Posters();
         $time = time();
+        date_default_timezone_set("Asia/Tashkent");
+        $time_zone = date('d-m-y H:m');
 
         if ($model->load(Yii::$app->request->post())) {
             if ($model->validate()) {
                 $model->user_id = Yii::$app->user->id;
-                $model->date = date("Y-m-d");
+                $model->date = $time_zone;
                 $model->poster_id = $time; 
 
 

@@ -102,7 +102,7 @@ $this->title = "E'lonlar"
                         </a></div>
                         <h5 class="title-item-two"><?=number_format($post->price, 0, ',', ' ');?> SO'M</h5>
                       </div>
-                      <div><p class="card-text"><small class="text-muted"><?=$post->addres->c_name?>  - <?=$post->date?> 16:45</small></p></div>
+                      <div><p class="card-text"><small class="text-muted"><?=$post->addres->c_name?>  - <?=$post->date?></small></p></div>
                     </div>
                   </div>
                 </div>
